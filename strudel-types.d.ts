@@ -392,7 +392,7 @@ declare module "@strudel/core" {
      * More specifically, it is a {@link IFraction} value indicating the midpoint
      * of each cycle, as this signal gets evaluated.
      *
-     * e.g. `time.inspect()` would show
+     * e.g.
      *
      *     [ 0/1 → 1/1 | {"s":1,"n":1,"d":2} ]
      *     [ 1/1 → 2/1 | {"s":1,"n":3,"d":2} ]
@@ -735,18 +735,6 @@ declare module "@strudel/core" {
          * Note: Don't pass 0 or negative values to this method.
          */
         rangex: PatternTransform;
-
-        /*****         Pattern functions registered by us            *****/
-        /*                                                               */
-        /*    These are not part of the standard Strudel distribution    */
-        /*                                                               */
-
-        /**
-         * Print a debug representation of the pattern onto the console
-         *
-         * @param n is the number of cycles to print.
-         */
-        inspect: PatternTransform<number>;
     }
 
     export const controls: Controls;
@@ -821,7 +809,7 @@ declare module "@strudel/core" {
      */
     export const register = (
         name: string,
-        f: (...args: Pattern[]) => Patternable,
+        f: (...args: Pattern[]) => Patternable
     ) => PatternTransform;
 
     /**
@@ -911,7 +899,7 @@ declare module "@strudel/webaudio" {
     export const superdough: (
         value: SuperdoughValue,
         after: TSecond,
-        duration: TSecond,
+        duration: TSecond
     ) => void;
 
     /**
